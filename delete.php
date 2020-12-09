@@ -1,8 +1,9 @@
 <?php
     require("conexion.php");
     $conexion = retornarConexion();
-
-    $respuesta = mysqli_query($conexion, "DELETE * FROM usuarios WHERE codigo='$_GET[id]'");
+    $id = $_GET['id'];
+    
+    $respuesta = mysqli_query($conexion, "DELETE * FROM usuarios WHERE Id='$_GET[id]'");
     #        echo json_encode($respuesta);
 
     if($respuesta){

@@ -74,8 +74,8 @@ $usuarios = "SELECT * FROM usuarios";
                    <tr>
                       <th><abbr title="Position">id</abbr></th>
                       <th>Nombre</th>
-                      <th>Login</th>
                       <th>Correo</th>
+                      <th>Login</th>
                       <th>Acciones</th>
                     <tr>
                 </thead>

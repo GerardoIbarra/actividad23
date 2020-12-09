@@ -1,11 +1,11 @@
 <?php
     $nombre = $_POST['nombre'];
-    $login = $_POST['email'];
+    $email = $_POST['email'];
 
     require("conexion.php");
     $conexion = retornarConexion();
 
-    $consulta = mysqli_query ($conexion, "SELECT * FROM usuarios WHERE Nombre = '$nombre' AND emal = '$login'");  
+    $consulta = mysqli_query ($conexion, "SELECT * FROM usuarios WHERE Nombre = '$nombre' AND emal = '$email'");  
     var_dump($consulta);
     $count = mysqli_num_rows($consulta);
     if($count==0){

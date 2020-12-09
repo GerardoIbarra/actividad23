@@ -1,8 +1,8 @@
 <?php
 require("conexion.php");
 $conexion = retornarConexion();
-$id=$_GET["id"];
-$usuarios = "SELECT * FROM usuarios WHERE Id ='$id' ";  
+
+$usuarios = "SELECT * FROM usuarios WHERE Id='$_GET[id]' ";  
 ?>
 
 <html>
@@ -39,8 +39,8 @@ $usuarios = "SELECT * FROM usuarios WHERE Id ='$id' ";
                    <tr>
                       <th><abbr title="Position">id</abbr></th>
                       <th>Nombre</th>
-                      <th>Usuario</th>
                       <th>Correo</th>
+                      <th>Usuario</th>
                       <th> </th>
                     <tr>
                 </thead>
