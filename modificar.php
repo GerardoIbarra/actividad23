@@ -51,10 +51,7 @@ $usuarios = "SELECT * FROM usuarios WHERE Id='$_GET[id]' ";
                   ?>
                   <tr>
                       <th>
-                        <?php
-                            echo $row["Id"];                    
-                        ?>
-                     </th>
+                      <input type="text" readonly value="<?php echo $row["Id"]; ?>" name="id">
                      <td>
                        <input type="text" value="<?php  echo $row["Nombre"]; ?>" name="nombre">
                     </td>
