@@ -13,7 +13,9 @@
         window.history.go(-1);</script>";
 
     }else{
-        header("location:checausr.php");
+        session_start();
+        $_SESSION['nombre'] = $nombre;
+        header("location:checausr.php?nombre='$nombre'");
     }
    
 ?>

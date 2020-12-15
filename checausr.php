@@ -1,7 +1,12 @@
 <?php
+  session_start();
+//var_dump($_SESSION['nombre']);
+if($_SESSION['nombre']){
 require("conexion.php");
 $conexion = retornarConexion();
 $usuarios = "SELECT * FROM usuarios";
+$_SESSION['nombre'] = $_GET['nombre'];
+
 ?>
 
 <html>
@@ -16,7 +21,13 @@ $usuarios = "SELECT * FROM usuarios";
 	        <div class="container">
 	          <h1 class="title">Universidad de Colima</h1>
 	          <h2 class="subtitle">Facultad de Telemática</h2>
-        	</div>
+          </div>
+          <div class="is-pulled-right">
+            <?php
+            echo "Bienvenido " .$_SESSION['nombre']. " | ";
+            ?>
+            <a href="logout.php?nombre='$nombre'">Salir</a>
+          </div>
       	</div>
     </section>
   
@@ -151,3 +162,10 @@ $usuarios = "SELECT * FROM usuarios";
     </center>
   </body>
 </html>
+<?php
+session_destroy();
+}else{
+echo "<script>alert('No tuvimos exito');</script>";
+header('location:index.html');
+}
+?>
