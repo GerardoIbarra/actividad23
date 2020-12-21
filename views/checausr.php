@@ -2,7 +2,7 @@
   session_start();
 //var_dump($_SESSION['nombre']);
 if($_SESSION['nombre']){
-require("conexion.php");
+require("./controllers/conexion.php");
 $conexion = retornarConexion();
 $usuarios = "SELECT * FROM usuarios";
 $_SESSION['nombre'] = $_GET['nombre'];
@@ -26,7 +26,7 @@ $_SESSION['nombre'] = $_GET['nombre'];
             <?php
             echo "Bienvenido " .$_SESSION['nombre']. " | ";
             ?>
-            <a href="logout.php?nombre='$nombre'">Salir</a>
+            <a href="./controllers/logout.php?nombre='$nombre'">Salir</a>
           </div>
       	</div>
     </section>
@@ -38,7 +38,7 @@ $_SESSION['nombre'] = $_GET['nombre'];
                 <h1 class="title is-2">Control de sistema </h1>
             <!--FOrm-->
             <div class="container--add" id="div1" style="display:none" >
-            <form method = "post" action="insertar.php" >
+            <form method = "post" action="./controllers/insertar.php" >
               <h2 class="container__title"><strong>Registrar un nuevo usuario</strong></h2>
               <div class="conteiner__form">
               <div class="field">
@@ -67,9 +67,6 @@ $_SESSION['nombre'] = $_GET['nombre'];
                       <input class="input is-primary" type="email" id="email" name="email" placeholder="e.g. alexsmith@gmail.com"></div>
                         </div>
                         <button id="botonregistro" class="button is-info" >Registrar
-                        <?php
-                           
-                       ?>
                         </button>
                       </div>
                       </div>
@@ -119,12 +116,12 @@ $_SESSION['nombre'] = $_GET['nombre'];
                     <td>
                     <div class="modal-footer">
                       <button id="ConfirmarModificar" class="button is-warning">
-                      <a href="modificar.php?id=<?php echo $row['Id'];?>">  
+                      <a href="./models/modificar.php?id=<?php echo $row['Id'];?>">  
                       Modificar
                     </a>
                       </button>
                       <button class="button is-danger" onclick="confirmacion()">
-                      <a href="delete.php?id=<?php echo$row['Id'];?>">Borrar</a>
+                      <a href="./controllers/delete.php?id=<?php echo$row['Id'];?>">Borrar</a>
                       </button>
                     </div>
                     </td>
@@ -149,7 +146,7 @@ $_SESSION['nombre'] = $_GET['nombre'];
          </div>
       </div>
     </div>
-    <script  src="index.js"></script>
+    <script  src="./index.js"></script>
    <!-- pié de página -->
       <center>
       <footer class="footer">
@@ -166,6 +163,6 @@ $_SESSION['nombre'] = $_GET['nombre'];
 session_destroy();
 }else{
 echo "<script>alert('No tuvimos exito');</script>";
-header('location:index.html');
+header('location:./index.html');
 }
 ?>

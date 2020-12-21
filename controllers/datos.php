@@ -1,5 +1,5 @@
 <?php
-    require("conexion.php");
+ require("./controllers/conexion.php");
     $conexion = retornarConexion();
     
     $respuesta = mysqli_query($conexion, "UPDATE usuarios SET Nombre='$_POST[nombre]', emal='$_POST[email]', user='$_POST[login]' WHERE Id='$_POST[id]'");

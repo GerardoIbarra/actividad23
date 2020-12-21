@@ -32,7 +32,7 @@ $usuarios = "SELECT * FROM usuarios WHERE Id='$_GET[id]' ";
               <!--tabla-->
             </div>
             <br>
-            <Form action="datos.php" method="POST">
+            <Form action="./controllers/datos.php" method="POST">
             <div class="table-container">
               <table class="table is-fullwidth">
                <thead>
@@ -74,7 +74,7 @@ $usuarios = "SELECT * FROM usuarios WHERE Id='$_GET[id]' ";
         </Form>
       </div>
     </div>
-    <script  src="index.js"></script>
+    <script  src="./index.js"></script>
    <!-- pié de página -->
       <center>
       <footer class="footer">

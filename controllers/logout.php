@@ -4,5 +4,5 @@ unset($_SESSION['nombre']);//libera la variable de la sesion
 
 session_unset();
 session_destroy();
-header('location:index.html');
+header('location:./index.html');
 ?>

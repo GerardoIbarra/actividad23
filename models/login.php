@@ -2,7 +2,7 @@
     $nombre = $_POST['nombre'];
     $email = $_POST['email'];
 
-    require("conexion.php");
+    require("./controllers/conexion.php");
     $conexion = retornarConexion();
 
     $consulta = mysqli_query ($conexion, "SELECT * FROM usuarios WHERE Nombre = '$nombre' AND emal = '$email'");  
@@ -15,7 +15,7 @@
     }else{
         session_start();
         $_SESSION['nombre'] = $nombre;
-        header("location:checausr.php?nombre='$nombre'");
+        header("location:./views/checausr.php?nombre='$nombre'");
     }
    
 ?>

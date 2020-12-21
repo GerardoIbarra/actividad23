@@ -1,5 +1,5 @@
 <?php
-    require("conexion.php");
+ require("./controllers/conexion.php");
     $conexion = retornarConexion();
     $id = $_GET['id'];
 
@@ -7,7 +7,7 @@
 
     if($respuesta){
         echo "<script>alert('se ha eliminado el usuario con exito');
-        window.location='./checausr.php'</script>";
+        window.location='./views/checausr.php'</script>";
     }else{
         echo "<script>alert('No tuvimos exito');
         window.history.go(-1);</script>";
